@@ -3,7 +3,6 @@ var width = 20
 var selected = []
 var input = Array.apply(null, Array(height)).map(Number.prototype.valueOf, 0)
 
-var raytracer
 var grid = fillableGrid(height,width,function(el,row,col,i) {
     if(selected.includes(i)) {
         el.className = '';
@@ -16,9 +15,11 @@ var grid = fillableGrid(height,width,function(el,row,col,i) {
     }
     console.log("You've selected:", selected.toString());
     console.log("The input will be:", input.toString());
+    document.getElementById("input").innerHTML = input.toString();
 });
 
 document.body.appendChild(grid);
+document.getElementById("input").innerHTML = input.toString();
 
 function fillableGrid(rows, cols, callback) {
     var i = 0;
